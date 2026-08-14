@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="Politique de confidentialité de l'extension YouTube Enhanced.">
+  <title>Politique de confidentialité · YouTube Enhanced</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f0f0f;
+      --panel: #181818;
+      --panel-2: #202020;
+      --border: #303030;
+      --text: #f1f1f1;
+      --muted: #aaa;
+      --accent: #ff3b30;
+      --accent-soft: rgba(255, 59, 48, .12);
+      --link: #7db7ff;
+      --shadow: 0 18px 55px rgba(0,0,0,.28);
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        color-scheme: light;
+        --bg: #f7f7f7;
+        --panel: #fff;
+        --panel-2: #f3f3f3;
+        --border: #dedede;
+        --text: #161616;
+        --muted: #666;
+        --accent-soft: rgba(255, 59, 48, .08);
+        --link: #065fd4;
+        --shadow: 0 18px 55px rgba(0,0,0,.08);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(18px);
+    }
+
+    .topbar-inner {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #ff4a3d, #e71919);
+      color: white;
+      box-shadow: 0 8px 24px rgba(255, 30, 30, .25);
+      font-size: 17px;
+    }
+
+    .lang-switch {
+      display: flex;
+      padding: 3px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 999px;
+    }
+
+    .lang-switch button {
+      border: 0;
+      border-radius: 999px;
+      padding: 7px 12px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .lang-switch button.active {
+      color: white;
+      background: var(--accent);
+    }
+
+    main {
+      width: min(900px, calc(100% - 32px));
+      margin: 42px auto 80px;
+    }
+
+    .hero {
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 90% 0%, var(--accent-soft), transparent 35%),
+        var(--panel);
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    h1 {
+      margin: 8px 0 10px;
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+      font-size: 16px;
+    }
+
+    .updated {
+      margin-top: 18px;
+      display: inline-flex;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--panel-2);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .card {
+      margin-top: 14px;
+      padding: 25px 28px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: -.02em;
+    }
+
+    p { margin: 9px 0; }
+
+    ul {
+      margin: 11px 0 4px;
+      padding-left: 23px;
+    }
+
+    li { margin: 7px 0; }
+
+    .notice {
+      border-color: color-mix(in srgb, var(--accent) 38%, var(--border));
+      background:
+        linear-gradient(135deg, var(--accent-soft), transparent 65%),
+        var(--panel);
+    }
+
+    .service {
+      margin: 12px 0;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: var(--panel-2);
+    }
+
+    .service strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .contact {
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    [data-lang] { display: none; }
+    [data-lang].active { display: block; }
+
+    @media (max-width: 620px) {
+      .topbar-inner {
+        width: min(100% - 20px, 980px);
+      }
+
+      main {
+        width: min(100% - 20px, 900px);
+        margin-top: 22px;
+      }
+
+      .hero, .card {
+        padding: 21px;
+        border-radius: 17px;
+      }
+
+      .brand-name { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span class="brand-name">YouTube Enhanced</span>
+      </div>
+
+      <div class="lang-switch" aria-label="Language">
+        <button id="btn-fr" type="button">FR</button>
+        <button id="btn-en" type="button">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- FRANÇAIS -->
+    <div data-lang="fr">
+      <section class="hero">
+        <span class="eyebrow">Confidentialité</span>
+        <h1>Politique de confidentialité</h1>
+        <p class="lead">
+          Cette politique explique quelles données l’extension YouTube Enhanced traite,
+          pourquoi elles sont utilisées, où elles sont stockées et quels services externes
+          peuvent recevoir certaines informations nécessaires à ses fonctionnalités.
+        </p>
+        <span class="updated">Dernière mise à jour : 14 août 2026</span>
+      </section>
+
+      <section class="card">
+        <h2>1. Résumé</h2>
+        <p>
+          YouTube Enhanced améliore l’expérience sur YouTube avec notamment l’affichage
+          des dislikes, des informations sur les miniatures, un classement local de chaînes
+          (« Favorites »), des statistiques publiques de chaînes et de vidéos, ainsi que
+          des outils de navigation et de lecture.
+        </p>
+        <p>
+          L’éditeur de l’extension n’exploite pas de serveur destiné à créer un profil
+          personnel de l’utilisateur et ne vend pas les données traitées par l’extension.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>2. Données stockées localement</h2>
+        <p>
+          L’extension utilise <code>chrome.storage.local</code> afin de conserver certaines
+          informations directement sur votre appareil, notamment :
+        </p>
+        <ul>
+          <li>vos préférences et réglages de l’extension ;</li>
+          <li>votre choix concernant le consentement aux services de données ;</li>
+          <li>les compteurs et le classement Favorites ;</li>
+          <li>les chaînes détectées et les métadonnées nécessaires au classement ;</li>
+          <li>des données publiques mises en cache, comme des statistiques de vidéos ou de chaînes ;</li>
+          <li>le cache des dislikes ;</li>
+          <li>certaines informations d’interface, comme le thème ou une URL d’avatar, lorsqu’elles sont disponibles.</li>
+        </ul>
+        <p>
+          Ces données locales restent dans le stockage de l’extension sur votre navigateur,
+          sauf lorsque certaines informations publiques doivent être transmises à un service
+          externe pour fournir une fonctionnalité demandée, comme décrit ci-dessous.
+        </p>
+      </section>
+
+      <section class="card notice">
+        <h2>3. Activité de navigation sur YouTube</h2>
+        <p>
+          Pour la fonctionnalité Favorites, l’extension détecte lorsqu’une vidéo est ouverte
+          sur <strong>youtube.com</strong>. Cette détection sert à identifier la chaîne
+          propriétaire de la vidéo et à incrémenter localement son compteur dans votre classement.
+        </p>
+        <p>
+          Ce suivi est limité aux pages YouTube prises en charge par l’extension et n’est pas
+          utilisé pour créer un profil publicitaire, déterminer votre solvabilité ou suivre votre
+          navigation sur d’autres sites.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>4. Données transmises à des services externes</h2>
+        <p>
+          Lorsque vous avez donné votre consentement aux fonctionnalités de données, l’extension
+          peut transmettre des <strong>identifiants publics de vidéos ou de chaînes YouTube</strong>
+          afin de récupérer les informations nécessaires à la fonction utilisée.
+        </p>
+
+        <div class="service">
+          <strong>Return YouTube Dislike</strong>
+          L’identifiant public d’une vidéo peut être envoyé à l’API Return YouTube Dislike
+          pour récupérer les statistiques de likes/dislikes disponibles.
+        </div>
+
+        <div class="service">
+          <strong>YouTube / Google</strong>
+          Des identifiants publics de vidéos ou de chaînes peuvent être envoyés aux services
+          YouTube et Google, notamment YouTube Data API et les services publics YouTube,
+          afin d’identifier une chaîne, récupérer son nom, son avatar, sa bannière, ses statistiques
+          publiques, ses dernières vidéos et les statistiques publiques de ces vidéos.
+        </div>
+
+        <p>
+          Comme pour toute requête HTTPS directe vers un service tiers, ces fournisseurs peuvent
+          recevoir des informations techniques standard liées à la connexion, telles que
+          l’adresse IP de l’appareil. L’éditeur de cette extension ne reçoit pas ces informations
+          via un serveur qui lui appartiendrait.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>5. Consentement</h2>
+        <p>
+          Les fonctions nécessitant l’envoi d’identifiants à des services externes sont soumises
+          au mécanisme de consentement intégré à l’extension.
+        </p>
+        <p>
+          Si vous refusez ou retirez ce consentement, les fonctions dépendant de Return YouTube
+          Dislike ou des services YouTube/Google peuvent être désactivées ou limitées.
+          Les fonctionnalités purement locales peuvent continuer à fonctionner.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>6. Vente, publicité et profilage</h2>
+        <p>L’extension ne vend pas vos données personnelles.</p>
+        <p>
+          Les données traitées ne sont pas utilisées par l’éditeur pour afficher de la publicité
+          comportementale, constituer un profil marketing indépendant des fonctionnalités de
+          l’extension, déterminer une éligibilité au crédit ou effectuer une surveillance sans
+          rapport avec les fonctions visibles de l’extension.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>7. Conservation et suppression</h2>
+        <p>
+          Les données locales sont conservées jusqu’à leur suppression par l’utilisateur,
+          leur réinitialisation depuis l’extension, ou la suppression du stockage de l’extension
+          par le navigateur.
+        </p>
+        <p>
+          Vous pouvez notamment utiliser les commandes disponibles dans l’extension pour :
+        </p>
+        <ul>
+          <li>désactiver le suivi Favorites ;</li>
+          <li>retirer votre consentement ;</li>
+          <li>supprimer les données Favorites ;</li>
+          <li>vider les caches locaux.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>8. Presse-papiers</h2>
+        <p>
+          Lorsque vous utilisez une action telle que « Copier le lien », l’extension peut écrire
+          le lien demandé dans votre presse-papiers. Elle n’utilise pas cette permission pour lire
+          le contenu de votre presse-papiers.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>9. Services tiers</h2>
+        <p>
+          Les services tiers utilisés possèdent leurs propres conditions et politiques de confidentialité :
+        </p>
+        <ul>
+          <li><a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer">Conditions d’utilisation YouTube</a></li>
+          <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Politique de confidentialité Google</a></li>
+          <li><a href="https://github.com/Anarios/return-youtube-dislike" target="_blank" rel="noopener noreferrer">Return YouTube Dislike</a></li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>10. Sécurité</h2>
+        <p>
+          Les communications avec les services externes déclarés utilisent HTTPS. L’extension
+          cherche à limiter les données transmises aux informations nécessaires à la fonctionnalité
+          demandée et utilise un stockage local pour le classement et les préférences.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>11. Modifications de cette politique</h2>
+        <p>
+          Cette politique peut être mise à jour si les fonctionnalités de l’extension,
+          les services utilisés ou les obligations applicables évoluent. La date de dernière
+          mise à jour affichée en haut de cette page sera alors modifiée.
+        </p>
+      </section>
+
+      <section class="card contact">
+        <h2>12. Contact</h2>
+        <p>
+          Pour toute question relative à cette politique ou au traitement des données :
+          <strong>REMPLACEZ_PAR_VOTRE_EMAIL</strong>
+        </p>
+      </section>
+    </div>
+
+    <!-- ENGLISH -->
+    <div data-lang="en">
+      <section class="hero">
+        <span class="eyebrow">Privacy</span>
+        <h1>Privacy Policy</h1>
+        <p class="lead">
+          This policy explains what data the YouTube Enhanced extension processes,
+          why it is used, where it is stored, and which external services may receive
+          information required to provide certain features.
+        </p>
+        <span class="updated">Last updated: August 14, 2026</span>
+      </section>
+
+      <section class="card">
+        <h2>1. Summary</h2>
+        <p>
+          YouTube Enhanced improves the YouTube experience with features such as dislike
+          information, thumbnail information, a local channel ranking (“Favorites”),
+          public channel and video statistics, and navigation and playback tools.
+        </p>
+        <p>
+          The extension publisher does not operate a server designed to build personal user
+          profiles and does not sell data processed by the extension.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>2. Data stored locally</h2>
+        <p>
+          The extension uses <code>chrome.storage.local</code> to store certain information
+          directly on your device, including:
+        </p>
+        <ul>
+          <li>extension preferences and settings;</li>
+          <li>your consent choice for data services;</li>
+          <li>Favorites counters and ranking;</li>
+          <li>detected channels and metadata required for the ranking;</li>
+          <li>cached public data such as video or channel statistics;</li>
+          <li>the dislike cache;</li>
+          <li>some interface information, such as theme or an avatar URL when available.</li>
+        </ul>
+        <p>
+          This local data remains in the extension’s browser storage except when certain
+          public identifiers must be sent to an external service to provide a requested
+          feature, as described below.
+        </p>
+      </section>
+
+      <section class="card notice">
+        <h2>3. YouTube browsing activity</h2>
+        <p>
+          For the Favorites feature, the extension detects when a video is opened on
+          <strong>youtube.com</strong>. This is used to identify the channel that owns the
+          video and locally increment that channel’s counter in your ranking.
+        </p>
+        <p>
+          This tracking is limited to supported YouTube pages and is not used to build an
+          advertising profile, determine creditworthiness, or track your browsing activity
+          on unrelated websites.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>4. Data sent to external services</h2>
+        <p>
+          After you have consented to data-powered features, the extension may send
+          <strong>public YouTube video or channel identifiers</strong> to retrieve information
+          required by the feature you are using.
+        </p>
+
+        <div class="service">
+          <strong>Return YouTube Dislike</strong>
+          A public video identifier may be sent to the Return YouTube Dislike API to retrieve
+          available like/dislike statistics.
+        </div>
+
+        <div class="service">
+          <strong>YouTube / Google</strong>
+          Public video or channel identifiers may be sent to YouTube and Google services,
+          including the YouTube Data API and public YouTube services, to identify a channel,
+          retrieve its name, avatar, banner, public statistics, latest videos, and public
+          statistics for those videos.
+        </div>
+
+        <p>
+          As with any direct HTTPS request to a third-party service, those providers may
+          receive standard connection information such as the device’s IP address. The
+          extension publisher does not receive this information through a publisher-operated server.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>5. Consent</h2>
+        <p>
+          Features that require sending identifiers to external services are subject to the
+          consent mechanism built into the extension.
+        </p>
+        <p>
+          If you decline or withdraw consent, features that depend on Return YouTube Dislike
+          or YouTube/Google services may be disabled or limited. Purely local features may
+          continue to work.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>6. Sale, advertising and profiling</h2>
+        <p>The extension does not sell your personal data.</p>
+        <p>
+          Data processed by the extension is not used by the publisher for behavioral
+          advertising, unrelated marketing profiling, credit eligibility decisions, or
+          surveillance unrelated to the extension’s visible features.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>7. Retention and deletion</h2>
+        <p>
+          Local data is retained until you delete or reset it, or until the browser removes
+          the extension’s local storage.
+        </p>
+        <p>You can use controls provided by the extension to:</p>
+        <ul>
+          <li>disable Favorites tracking;</li>
+          <li>withdraw consent;</li>
+          <li>delete Favorites data;</li>
+          <li>clear local caches.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>8. Clipboard</h2>
+        <p>
+          When you use an action such as “Copy link,” the extension may write the requested
+          link to your clipboard. It does not use this permission to read the contents of
+          your clipboard.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>9. Third-party services</h2>
+        <p>The third-party services used by the extension have their own terms and privacy policies:</p>
+        <ul>
+          <li><a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer">YouTube Terms of Service</a></li>
+          <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+          <li><a href="https://github.com/Anarios/return-youtube-dislike" target="_blank" rel="noopener noreferrer">Return YouTube Dislike</a></li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>10. Security</h2>
+        <p>
+          Communications with declared external services use HTTPS. The extension aims to
+          limit transmitted data to information required for the requested feature and uses
+          local storage for rankings and preferences.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>11. Changes to this policy</h2>
+        <p>
+          This policy may be updated if the extension’s features, services, or applicable
+          requirements change. The “Last updated” date shown at the top of this page will
+          be revised accordingly.
+        </p>
+      </section>
+
+      <section class="card contact">
+        <h2>12. Contact</h2>
+        <p>
+          For questions about this policy or data processing:
+          <strong>REPLACE_WITH_YOUR_EMAIL</strong>
+        </p>
+      </section>
+    </div>
+
+    <footer>
+      YouTube Enhanced · Privacy Policy
+    </footer>
+  </main>
+
+  <script>
+    (() => {
+      const blocks = [...document.querySelectorAll('[data-lang]')];
+      const fr = document.getElementById('btn-fr');
+      const en = document.getElementById('btn-en');
+
+      function setLang(lang) {
+        const selected = lang === 'en' ? 'en' : 'fr';
+        document.documentElement.lang = selected;
+
+        blocks.forEach(el => {
+          el.classList.toggle('active', el.dataset.lang === selected);
+        });
+
+        fr.classList.toggle('active', selected === 'fr');
+        en.classList.toggle('active', selected === 'en');
+
+        document.title = selected === 'fr'
+          ? 'Politique de confidentialité · YouTube Enhanced'
+          : 'Privacy Policy · YouTube Enhanced';
+
+        try { localStorage.setItem('privacy_language', selected); } catch {}
+      }
+
+      fr.addEventListener('click', () => setLang('fr'));
+      en.addEventListener('click', () => setLang('en'));
+
+      let initial = 'fr';
+      try {
+        initial = localStorage.getItem('privacy_language')
+          || (navigator.language || '').toLowerCase().startsWith('fr') ? 'fr' : 'en';
+      } catch {
+        initial = (navigator.language || '').toLowerCase().startsWith('fr') ? 'fr' : 'en';
+      }
+
+      // Corrige la priorité de l'opérateur dans le cas localStorage.
+      try {
+        const saved = localStorage.getItem('privacy_language');
+        if (saved === 'fr' || saved === 'en') {
+          initial = saved;
+        } else {
+          initial = (navigator.language || '').toLowerCase().startsWith('fr') ? 'fr' : 'en';
+        }
+      } catch {}
+
+      setLang(initial);
+    })();
+  </script>
+</body>
+</html>
